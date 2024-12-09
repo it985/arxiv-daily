@@ -58,3 +58,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           REQUIREMENTS: requirements-mkdocs.txt
+      - name: Delete Workflow Runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          retain_days: 30
+          keep_minimum_runs: 6
